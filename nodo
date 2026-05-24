@@ -1,0 +1,10 @@
+self.navigator = BasicNavigator()
+
+self.srv = self.create_service(
+    Trigger,
+    'start_mission',
+    self.start_mission_callback
+)
+
+self.navigator.waitUntilNav2Active()
+self.navigator.followWaypoints(waypoints)
